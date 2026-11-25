@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import jsonschema
+import pytest
 
 from conftest import EXAMPLES, SKILLS, load_script
 
@@ -23,6 +24,11 @@ def test_labeled_text_matches_expected_json_and_csv():
     jsonschema.validate(document, SCHEMA)
 
 
+# northwind.pdf is a binary sample that the Cursor rescue could not recover.
+# Skip instead of failing until the original file is restored.
+@pytest.mark.skipif(
+    not (EXAMPLE / "northwind.pdf").is_file(), reason="examples/invoice-extraction/northwind.pdf missing"
+)
 def test_pdf_round_trip_matches_the_text_invoice():
     text_doc = invoice.extract_path(EXAMPLE / "northwind.txt")
     pdf_doc = invoice.extract_path(EXAMPLE / "northwind.pdf")

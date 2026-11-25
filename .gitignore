@@ -5,3 +5,5 @@ __pycache__/
 .python-packages/
 tmp/
 .DS_Store
+.env*
+!.env.example

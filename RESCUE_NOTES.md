@@ -26,3 +26,12 @@ Not in this copy: files Cursor's template created and the agent never changed (e
 - binary not recoverable from diff view: site/invoice-extraction.gif
 - binary not recoverable from diff view: site/qa-test-generation.gif
 - binary not recoverable from diff view: site/talking-head-edit-plan.gif
+
+## Repair log (2026-11-25, Claude)
+
+- Regenerated all six skill zips with the repo's own packager (fixed timestamps, reproducible): `python3 scripts/package_skills.py` -> `dist/*.zip`, and `--dist site/downloads` -> `site/downloads/*.zip` (byte-identical copies).
+- `evals/test_invoice.py`: `test_pdf_round_trip_matches_the_text_invoice` now skips when `examples/invoice-extraction/northwind.pdf` is absent, instead of failing with FileNotFoundError. The PDF was not recreated (it would be a fabricated sample). Restore the original file and the test runs again.
+- `.gitignore`: added `.env*` (keeps `.env.example`).
+- Verified (Python 3.11 venv, requirements.txt): `python -m pytest` -> 19 passed, 2 skipped (missing PDF; live LLM judge without ANTHROPIC_API_KEY). Original agent reported 20 passed, 1 skipped; the difference is the PDF test. `scripts/demo_invoice.py`, `demo_qa.py`, `demo_edl.py` all run.
+- Still missing (binaries): `examples/invoice-extraction/northwind.pdf`; the three demo GIFs (`docs/*.gif` and `site/*.gif`), which README and `site/index.html` (including og:image) still reference.
+  The GIFs can be re-recorded with `vhs docs/<name>.tape` from the repo root (tapes use relative paths only), then copied to `site/`. Not done here because the tapes ask for the "DejaVu Sans Mono" font, which is not installed on this Mac, and vhs would silently fall back to a proportional font.
