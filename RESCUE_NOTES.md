@@ -41,3 +41,11 @@ Not in this copy: files Cursor's template created and the agent never changed (e
 - `examples/invoice-extraction/northwind.pdf` is now generated from `northwind.txt` by the new `scripts/make_sample_pdf.py` (also `make sample-pdf`), which calls the skill's own `render_text_pdf()` (stdlib only, uncompressed, byte-for-byte deterministic; `--check` flags a stale file). Same fictional Northwind invoice as the text fixture.
 - `evals/test_invoice.py`: the PDF round-trip test is no longer skipped; added a test that the committed PDF equals a fresh render of `northwind.txt`.
 - Verified: `python -m pytest` -> 21 passed, 1 skipped (live LLM judge, no ANTHROPIC_API_KEY). Skill zips unchanged (examples are not packaged).
+
+## Demo GIFs re-recorded (2026-11-25, Claude)
+
+- Installed DejaVu Sans Mono (`brew install --cask font-dejavu`) and recorded the three tapes with vhs 0.12.1 from a neutral copy at `/tmp/claude-business-skills`. Frames inspected: DejaVu Sans Mono, `skills $` prompt, only repo-relative paths.
+- `docs/{invoice-extraction,qa-test-generation,talking-head-edit-plan}.gif` and identical copies in `site/`.
+- New `site/og.png` (1200x630, last frame of the invoice run). `site/index.html` and `site/offer.html` used the invoice GIF as og/twitter image, whose first frame is a nearly empty prompt; they now point at `og.png` with width/height/alt.
+- New `docs/record-demos.sh` regenerates all of the above.
+- Checked headlessly: all three GIFs load on the site and `/og.png` is served. `python -m pytest` 21 passed, 1 skipped.
