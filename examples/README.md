@@ -23,3 +23,5 @@ python plugins/business-skills/skills/qa-test-generation/scripts/generate_tests.
   --out-dir examples/qa-test-generation \
   --stem checkout
 ```
+
+`northwind.pdf` is generated from `northwind.txt` by `python3 scripts/make_sample_pdf.py` (deterministic; `--check` reports a stale file).

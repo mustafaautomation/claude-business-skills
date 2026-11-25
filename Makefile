@@ -1,4 +1,4 @@
-.PHONY: test package demo
+.PHONY: test package demo sample-pdf
 
 test:
 	python3 -m pytest
@@ -8,3 +8,6 @@ package:
 
 demo:
 	python3 scripts/demo_invoice.py
+
+sample-pdf:
+	python3 scripts/make_sample_pdf.py

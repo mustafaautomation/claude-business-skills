@@ -35,3 +35,9 @@ Not in this copy: files Cursor's template created and the agent never changed (e
 - Verified (Python 3.11 venv, requirements.txt): `python -m pytest` -> 19 passed, 2 skipped (missing PDF; live LLM judge without ANTHROPIC_API_KEY). Original agent reported 20 passed, 1 skipped; the difference is the PDF test. `scripts/demo_invoice.py`, `demo_qa.py`, `demo_edl.py` all run.
 - Still missing (binaries): `examples/invoice-extraction/northwind.pdf`; the three demo GIFs (`docs/*.gif` and `site/*.gif`), which README and `site/index.html` (including og:image) still reference.
   The GIFs can be re-recorded with `vhs docs/<name>.tape` from the repo root (tapes use relative paths only), then copied to `site/`. Not done here because the tapes ask for the "DejaVu Sans Mono" font, which is not installed on this Mac, and vhs would silently fall back to a proportional font.
+
+## Sample PDF restored (2026-11-25, Claude)
+
+- `examples/invoice-extraction/northwind.pdf` is now generated from `northwind.txt` by the new `scripts/make_sample_pdf.py` (also `make sample-pdf`), which calls the skill's own `render_text_pdf()` (stdlib only, uncompressed, byte-for-byte deterministic; `--check` flags a stale file). Same fictional Northwind invoice as the text fixture.
+- `evals/test_invoice.py`: the PDF round-trip test is no longer skipped; added a test that the committed PDF equals a fresh render of `northwind.txt`.
+- Verified: `python -m pytest` -> 21 passed, 1 skipped (live LLM judge, no ANTHROPIC_API_KEY). Skill zips unchanged (examples are not packaged).
