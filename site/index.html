@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business skills — Quvantic</title>
+  <meta name="description" content="Six Claude skills for proposals, invoices, QA, content, meetings, and talking-head cut lists. Portfolio demo by Mustafa.">
+  <link rel="canonical" href="https://skills.quvantic.com/">
+  <meta property="og:title" content="Business skills — Quvantic">
+  <meta property="og:description" content="Proposals, invoices, test design, content, meetings, and a talking-head cut list. Each skill checks its own work.">
+  <meta property="og:url" content="https://skills.quvantic.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://skills.quvantic.com/invoice-extraction.gif">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Business skills — Quvantic">
+  <meta name="twitter:description" content="Proposals, invoices, test design, content, meetings, and a talking-head cut list. Each skill checks its own work.">
+  <meta name="twitter:image" content="https://skills.quvantic.com/invoice-extraction.gif">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,560;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;560;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="mark" href="./">Quvantic skills</a>
+      <nav aria-label="Page">
+        <a href="#skills">Skills</a>
+        <a href="#demo">Demos</a>
+        <a href="#install">Install</a>
+        <a href="offer.html">Offer</a>
+        <a href="https://github.com/mustafaautomation/claude-business-skills">GitHub</a>
+      </nav>
+    </header>
+    <p class="banner">Portfolio demo, not client work</p>
+    <main id="content">
+      <section class="hero">
+        <p class="kicker">Mustafa · QA and test automation</p>
+        <h1>Skills for the work you <em>bill</em>.</h1>
+        <p class="lede">Proposals, invoices, test design, content, meeting notes, and a talking-head cut list. Each one is a folder with instructions and a script that rejects a bad result. They run in Claude.ai, Claude Code, and the API.</p>
+        <div class="actions">
+          <a class="button" href="#skills">See the six</a>
+          <a class="button-quiet" href="https://github.com/mustafaautomation/claude-business-skills">View on GitHub</a>
+          <a class="button-quiet" href="offer.html">Hire this shape of work</a>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>The set</h2>
+        <p class="intro">The QA skill is the deep one: risk score, a floor for money and auth, Gherkin, a traceability table, and Playwright skeletons that stay marked fixme until a person writes the locators. Download a zip and upload it, or install the whole set from the marketplace.</p>
+        <div class="skill-list">
+          <article class="skill">
+            <div class="index">01</div>
+            <div class="skill-body">
+              <h3>proposal-writer</h3>
+              <p>Scores a job post against a profile, flags unpaid tests, and drafts a bid that can only quote proof you actually listed.</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">Must have Python.
+Please start with an unpaid sample.</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">Fit 30  decline
+Flags: unpaid-sample, urgent
+Ask for a paid pilot.</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/proposal-writer.zip">Download zip</a></p>
+            </div>
+          </article>
+          <article class="skill">
+            <div class="index">02</div>
+            <div class="skill-body">
+              <h3>invoice-extraction</h3>
+              <p>Reads a labeled invoice or a PDF into JSON and CSV. Line math, tax, and the total have to agree within a cent.</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">Subtotal: 1660.00
+Tax (8.5%): 100.00
+Total: 1801.10</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">INVALID
+tax: expected 141.10
+total: expected 1760.00</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/invoice-extraction.zip">Download zip</a></p>
+            </div>
+          </article>
+          <article class="skill feature">
+            <div class="index">03</div>
+            <div class="skill-body">
+              <h3>qa-test-generation <span>the specialty</span></h3>
+              <p>Turns stories into prioritized cases. Payment and auth outrank copy. Every acceptance id shows up in the matrix, or the script exits with an error.</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">US-30  impact 4  likelihood 3
+areas: [pricing]
+AC-4  free shipping at 75.00</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">US-30-TC-001  P0
+risk score 12, pricing floor
+US-3-TC-001   P3  copy only</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/qa-test-generation.zip">Download zip</a></p>
+            </div>
+          </article>
+          <article class="skill">
+            <div class="index">04</div>
+            <div class="skill-body">
+              <h3>content-repurposing</h3>
+              <p>One argument becomes a LinkedIn post, an X thread, a newsletter, and a short script. A checker enforces the length rules.</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">A transcript is not a post.
+Pull one argument out.</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">PASS
+6 posts, each under 280
+35s script at 150 wpm</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/content-repurposing.zip">Download zip</a></p>
+            </div>
+          </article>
+          <article class="skill">
+            <div class="index">05</div>
+            <div class="skill-body">
+              <h3>meeting-notes-to-actions</h3>
+              <p>Decisions, owners, dates, and a follow-up note. A missing owner stays missing. An explicit date beats “Friday.”</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">Write the smoke. Due Friday.
+Also written down: 2026-04-11.
+Send the recap. No owner.</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">A-1 unassigned  due 2026-04-08
+A-2 Mustafa     due 2026-04-11
+issue: relative-date-ignored</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/meeting-notes-to-actions.zip">Download zip</a></p>
+            </div>
+          </article>
+          <article class="skill">
+            <div class="index">06</div>
+            <div class="skill-body">
+              <h3>talking-head-edit-plan</h3>
+              <p>A timestamped transcript becomes a cut list and a CMX EDL. Filler and dead air come out. The picture is still yours to cut.</p>
+              <div class="io">
+                <div>
+                  <p class="io-label">Sample in</p>
+                  <pre class="sample">00:00:03,000 --> 00:00:03,800
+Um</pre>
+                </div>
+                <div>
+                  <p class="io-label">Sample out</p>
+                  <pre class="sample">9000 ms -> 7120 ms
+001  00:00:00:00 00:00:03:04
+002  00:00:05:00 00:00:09:00</pre>
+                </div>
+              </div>
+              <p class="download"><a class="button-quiet" href="downloads/talking-head-edit-plan.zip">Download zip</a></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="demo">
+        <h2>Three checks, on camera</h2>
+        <p class="intro">Invoice arithmetic, the QA priority floor, and a talking-head EDL. Sample data is fictional.</p>
+        <div class="demos">
+          <figure>
+            <div class="demo-frame">
+              <img src="invoice-extraction.gif" alt="Terminal recording. A valid invoice totals 1801.10. A second run marks it invalid because tax 100.00 is not 8.5 percent of 1660.00.">
+            </div>
+            <figcaption>Invoice extraction. Valid total, then a tax figure that does not add up.</figcaption>
+          </figure>
+          <figure>
+            <div class="demo-frame">
+              <img src="qa-test-generation.gif" alt="Terminal recording of the QA generator. Checkout produces 20 tests, 19 at P0 and one P3. Free shipping stays P0 because pricing raises the floor even though the raw score is 12.">
+            </div>
+            <figcaption>QA test generation. Pricing keeps a score of 12 at P0. Delivery copy stays P3.</figcaption>
+          </figure>
+          <figure>
+            <div class="demo-frame">
+              <img src="talking-head-edit-plan.gif" alt="Terminal recording of an edit decision list. A filler Um is removed and the program shortens from 9000 milliseconds to 7120. Two CMX events follow.">
+            </div>
+            <figcaption>Talking-head edit plan. The filler cue is gone. Out points are exclusive.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="install">
+        <h2>Install it where you work</h2>
+        <p class="intro">A skill uploaded in one product is not automatically available in the others. Pick the surface and install there.</p>
+        <div class="columns">
+          <article class="panel">
+            <h3>claude.ai</h3>
+            <p>Download a zip above, or from <code>downloads/</code>. Settings, Capabilities, Skills, upload. Code execution has to be on, or the script never runs.</p>
+          </article>
+          <article class="panel">
+            <h3>Claude Code</h3>
+            <pre>claude plugin marketplace add mustafaautomation/claude-business-skills
+claude plugin install business-skills@quvantic-skills</pre>
+          </article>
+          <article class="panel">
+            <h3>API</h3>
+            <p>POST the zip to <code>/v1/skills</code>, then pass the returned id in <code>container.skills</code> with the code execution tool. The container cannot install packages.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="offer">
+        <h2>Hire the same shape of work</h2>
+        <p class="intro">Fixed packages for a custom skill. The public sample is not the delivery.</p>
+        <div class="prices">
+          <article class="price">
+            <h3>Starter</h3>
+            <strong>$180</strong>
+            <p>One skill, the workflow, templates, one example, and a zip. Three-day delivery.</p>
+          </article>
+          <article class="price">
+            <h3>Standard</h3>
+            <strong>$420</strong>
+            <p>Adds a validation script, a failure example, and a pytest that locks the script. Five-day delivery.</p>
+          </article>
+          <article class="price">
+            <h3>Studio</h3>
+            <strong>$780</strong>
+            <p>Up to three skills, a plugin manifest, and one revision pass. Ten-day delivery.</p>
+          </article>
+        </div>
+        <div class="cta-row">
+          <a class="button" href="offer.html">Read the gig and the FAQ</a>
+          <a class="button-quiet" href="https://github.com/mustafaautomation/claude-business-skills">GitHub</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>Portfolio demo, not client work.</div>
+      <div>
+        <a href="https://github.com/mustafaautomation/claude-business-skills">GitHub</a>
+        ·
+        <a href="https://github.com/mustafaautomation">mustafaautomation</a>
+        ·
+        <a href="https://quvantic.com">quvantic.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

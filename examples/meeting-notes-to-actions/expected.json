@@ -1,0 +1,30 @@
+{
+  "title": "Q2 launch standup",
+  "meeting_date": "2026-04-07",
+  "decisions": [
+    "Ship the billing page behind a flag"
+  ],
+  "actions": [
+    {
+      "id": "A-1",
+      "text": "Send the recap",
+      "owner": "unassigned",
+      "due": "2026-04-08",
+      "issues": [
+        "missing-owner"
+      ]
+    },
+    {
+      "id": "A-2",
+      "text": "Write the Playwright smoke for checkout",
+      "owner": "Mustafa",
+      "due": "2026-04-11",
+      "issues": [
+        "relative-date-ignored"
+      ]
+    }
+  ],
+  "open_questions": [
+    "Do we invoice the pilot before the flag is on?"
+  ]
+}

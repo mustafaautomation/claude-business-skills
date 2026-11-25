@@ -1,0 +1,13 @@
+Subject: Follow-up: Q2 launch standup
+
+Notes from 2026-04-07. Reply if an owner or a date is wrong.
+
+Decisions
+- Ship the billing page behind a flag
+
+Actions
+- unassigned — Send the recap — due 2026-04-08 (needs an owner)
+- Mustafa — Write the Playwright smoke for checkout — due 2026-04-11
+
+Open questions
+- Do we invoice the pilot before the flag is on?

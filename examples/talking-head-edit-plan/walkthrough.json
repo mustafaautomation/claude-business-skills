@@ -1,0 +1,72 @@
+{
+  "title": "talking-head-cut",
+  "fps": 30,
+  "max_pause_ms": 800,
+  "retained_pause_ms": 120,
+  "source_duration_ms": 22000,
+  "program_duration_ms": 17840,
+  "removed": [
+    {
+      "start_ms": 4500,
+      "end_ms": 5200,
+      "reason": "filler",
+      "text": "Um, you know"
+    },
+    {
+      "start_ms": 18500,
+      "end_ms": 19100,
+      "reason": "filler",
+      "text": "Uh"
+    },
+    {
+      "start_ms": 4620,
+      "end_ms": 8000,
+      "reason": "dead-air",
+      "text": ""
+    },
+    {
+      "start_ms": 18620,
+      "end_ms": 19400,
+      "reason": "dead-air",
+      "text": ""
+    }
+  ],
+  "keeps": [
+    {
+      "start_ms": 0,
+      "end_ms": 4620,
+      "program_start_ms": 0,
+      "program_end_ms": 4620,
+      "text": "[chapter] Open on the promise"
+    },
+    {
+      "start_ms": 8000,
+      "end_ms": 18620,
+      "program_start_ms": 4620,
+      "program_end_ms": 15240,
+      "text": "Today we cut a talking head by deleting filler and tightening the long pauses. Leave the breath. Lose the dead air. The viewer should feel one continuous thought, not a search for the next sentence. When a stretch runs long, cover it."
+    },
+    {
+      "start_ms": 19400,
+      "end_ms": 22000,
+      "program_start_ms": 15240,
+      "program_end_ms": 17840,
+      "text": "That is the whole rule."
+    }
+  ],
+  "chapters": [
+    {
+      "program_ms": 0,
+      "title": "Open on the promise"
+    }
+  ],
+  "broll": [
+    {
+      "program_start_ms": 6620,
+      "program_end_ms": 14240,
+      "note": "Cover this stretch with a diagram or screen capture so the cutaways hide jump cuts."
+    }
+  ],
+  "warnings": [],
+  "edl": "TITLE: talking-head-cut\nFCM: NON-DROP FRAME\n\n001  AX       V     C        00:00:00:00 00:00:04:19 00:00:00:00 00:00:04:19\n* FROM CLIP NAME: SOURCE\n002  AX       V     C        00:00:08:00 00:00:18:19 00:00:04:19 00:00:15:07\n* FROM CLIP NAME: SOURCE\n003  AX       V     C        00:00:19:12 00:00:22:00 00:00:15:07 00:00:17:25\n* FROM CLIP NAME: SOURCE\n"
+}

@@ -1,0 +1,57 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import jsonschema
+
+from conftest import EXAMPLES, SKILLS, load_script
+
+invoice = load_script("invoice-extraction", "extract_invoice.py")
+EXAMPLE = EXAMPLES / "invoice-extraction"
+SCHEMA = json.loads(
+    (SKILLS / "invoice-extraction" / "assets" / "invoice.schema.json").read_text(encoding="utf-8")
+)
+
+
+def test_labeled_text_matches_expected_json_and_csv():
+    document = invoice.extract_path(EXAMPLE / "northwind.txt")
+    expected = json.loads((EXAMPLE / "expected.json").read_text(encoding="utf-8"))
+    assert document == expected
+    assert document["valid"] is True
+    assert invoice.to_csv(document) == (EXAMPLE / "expected.csv").read_text(encoding="utf-8")
+    jsonschema.validate(document, SCHEMA)
+
+
+def test_pdf_round_trip_matches_the_text_invoice():
+    text_doc = invoice.extract_path(EXAMPLE / "northwind.txt")
+    pdf_doc = invoice.extract_path(EXAMPLE / "northwind.pdf")
+    assert pdf_doc == text_doc
+    fallback = invoice._pdf_text_fallback((EXAMPLE / "northwind.pdf").read_bytes())
+    assert invoice.invoice_from_source(fallback) == text_doc
+
+
+def test_bad_tax_is_invalid_and_names_both_breaks():
+    document = invoice.extract_path(EXAMPLE / "northwind-bad-tax.txt")
+    assert document["valid"] is False
+    paths = {item["path"] for item in document["errors"]}
+    assert paths == {"tax", "total"}
+    tax = next(item for item in document["errors"] if item["path"] == "tax")
+    assert "expected 141.10" in tax["message"]
+    total = next(item for item in document["errors"] if item["path"] == "total")
+    assert "1760.00" in total["message"]
+    assert invoice.main([str(EXAMPLE / "northwind-bad-tax.txt"), "--quiet"]) == 1
+
+
+def test_photo_is_refused_and_valid_text_exits_zero(tmp_path: Path):
+    assert invoice.main([str(tmp_path / "scan.png"), "--quiet"]) == 2
+    assert invoice.main([str(EXAMPLE / "northwind.txt"), "--quiet"]) == 0
+
+
+def test_line_math_break_is_reported(tmp_path: Path):
+    text = (EXAMPLE / "northwind.txt").read_text(encoding="utf-8").replace("1020.00", "999.00", 1)
+    path = tmp_path / "bad-line.txt"
+    path.write_text(text, encoding="utf-8")
+    document = invoice.extract_path(path)
+    assert document["valid"] is False
+    assert any(item["path"] == "line_items[0].amount" for item in document["errors"])

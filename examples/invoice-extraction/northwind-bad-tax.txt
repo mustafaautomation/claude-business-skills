@@ -1,0 +1,24 @@
+Invoice Number: INV-1042
+Invoice Date: 2026-03-02
+Due Date: 2026-03-16
+Currency: USD
+
+From:
+Northwind QA Studio
+12 Harbor Lane
+Austin, TX 78701
+Tax ID: 74-2938104
+
+Bill To:
+Quvantic Labs
+88 Market Street
+San Francisco, CA 94105
+
+Line Items:
+QA-AUTO | Playwright regression suite | 12 | 85.00 | 1020.00
+QA-PLAN | Risk-based test plan | 1 | 640.00 | 640.00
+
+Subtotal: 1660.00
+Tax (8.5%): 100.00
+Total: 1801.10
+Payment Terms: Net 14

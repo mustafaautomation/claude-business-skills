@@ -1,0 +1,11 @@
+{
+  "name": "Mustafa",
+  "title": "QA and test automation specialist",
+  "rate_usd_per_hour": 45,
+  "skills": ["Playwright", "pytest", "Python", "API testing", "CI"],
+  "proof": [
+    "Shipped a talking-head edit planner that turns an SRT into a CMX EDL, drops filler-only lines, and tightens dead air.",
+    "Shipped a risk-based test generator that writes Gherkin and Playwright skeletons from acceptance criteria."
+  ],
+  "avoid": ["unpaid test projects", "equity-only offers"]
+}

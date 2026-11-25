@@ -1,0 +1,336 @@
+{
+  "feature": "Checkout",
+  "uncovered_acceptance": [],
+  "cases": [
+    {
+      "id": "US-14-TC-001",
+      "story_id": "US-14",
+      "title": "A valid unexpired code reduces the order total by the code amount",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "acceptance",
+      "type": "positive",
+      "traces": [
+        "AC-1"
+      ],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The acceptance criterion holds: A valid unexpired code reduces the order total by the code amount"
+      ],
+      "expected": "the order total shows the discount",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-002",
+      "story_id": "US-14",
+      "title": "An expired code is rejected and the total stays unchanged",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "acceptance",
+      "type": "negative",
+      "traces": [
+        "AC-2"
+      ],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The acceptance criterion holds: An expired code is rejected and the total stays unchanged"
+      ],
+      "expected": "The system refuses the action and leaves protected totals unchanged.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-003",
+      "story_id": "US-14",
+      "title": "A second code is rejected while one code is already applied",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "acceptance",
+      "type": "negative",
+      "traces": [
+        "AC-3"
+      ],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The acceptance criterion holds: A second code is rejected while one code is already applied"
+      ],
+      "expected": "The system refuses the action and leaves protected totals unchanged.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-004",
+      "story_id": "US-14",
+      "title": "promo_code length 4 is accepted",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "boundary",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "promo_code is aaaa (length 4)"
+      ],
+      "expected": "The value is accepted.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-005",
+      "story_id": "US-14",
+      "title": "promo_code length 3 is rejected",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "boundary",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "promo_code is aaa (length 3)"
+      ],
+      "expected": "The value is rejected with a validation message.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-006",
+      "story_id": "US-14",
+      "title": "promo_code length 12 is accepted",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "boundary",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "promo_code is aaaaaaaaaaaa (length 12)"
+      ],
+      "expected": "The value is accepted.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-007",
+      "story_id": "US-14",
+      "title": "promo_code length 13 is rejected",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "boundary",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "promo_code is aaaaaaaaaaaaa (length 13)"
+      ],
+      "expected": "The value is rejected with a validation message.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-008",
+      "story_id": "US-14",
+      "title": "promo_code is empty and is rejected",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "boundary",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "promo_code is empty"
+      ],
+      "expected": "The value is rejected with a validation message.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-009",
+      "story_id": "US-14",
+      "title": "promo: empty --apply_valid--> applied",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "state-transition",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The promo state is empty and apply_valid happens"
+      ],
+      "expected": "The state is applied.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-010",
+      "story_id": "US-14",
+      "title": "promo: applied --apply_second--> applied",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "state-transition",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The promo state is applied and apply_second happens"
+      ],
+      "expected": "The event is rejected and the state stays applied.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-14-TC-011",
+      "story_id": "US-14",
+      "title": "promo: applied --remove--> empty",
+      "priority": "P0",
+      "risk_score": 20,
+      "technique": "state-transition",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can apply one promo code at checkout",
+      "steps": [
+        "The promo state is applied and remove happens"
+      ],
+      "expected": "The state is empty.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-001",
+      "story_id": "US-30",
+      "title": "Carts at or above 75.00 in the US show free shipping",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "acceptance",
+      "type": "positive",
+      "traces": [
+        "AC-4"
+      ],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "The acceptance criterion holds: Carts at or above 75.00 in the US show free shipping"
+      ],
+      "expected": "the shipping line shows the price from the rule",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-002",
+      "story_id": "US-30",
+      "title": "cart_total at minimum 0 is accepted",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "boundary",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "cart_total is 0"
+      ],
+      "expected": "The value is accepted.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-003",
+      "story_id": "US-30",
+      "title": "cart_total below minimum (-0.01) is rejected",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "boundary",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "cart_total is -0.01"
+      ],
+      "expected": "The value is rejected with a validation message.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-004",
+      "story_id": "US-30",
+      "title": "cart_total at maximum 10000 is accepted",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "boundary",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "cart_total is 10000"
+      ],
+      "expected": "The value is accepted.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-005",
+      "story_id": "US-30",
+      "title": "cart_total above maximum (10000.01) is rejected",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "boundary",
+      "type": "negative",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "cart_total is 10000.01"
+      ],
+      "expected": "The value is rejected with a validation message.",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-006",
+      "story_id": "US-30",
+      "title": "rule country=US cart_total=74.99 -> standard shipping",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "decision-table",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "Conditions are country=US cart_total=74.99"
+      ],
+      "expected": "standard shipping",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-007",
+      "story_id": "US-30",
+      "title": "rule country=US cart_total=75.00 -> free shipping",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "decision-table",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "Conditions are country=US cart_total=75.00"
+      ],
+      "expected": "free shipping",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-30-TC-008",
+      "story_id": "US-30",
+      "title": "rule country=CA cart_total=75.00 -> standard shipping",
+      "priority": "P0",
+      "risk_score": 12,
+      "technique": "decision-table",
+      "type": "positive",
+      "traces": [],
+      "preconditions": "A shopper can see the shipping price the cart actually qualifies for",
+      "steps": [
+        "Conditions are country=CA cart_total=75.00"
+      ],
+      "expected": "standard shipping",
+      "automation_candidate": true
+    },
+    {
+      "id": "US-3-TC-001",
+      "story_id": "US-3",
+      "title": "A dated estimate is visible before the pay button",
+      "priority": "P3",
+      "risk_score": 4,
+      "technique": "acceptance",
+      "type": "positive",
+      "traces": [
+        "AC-5"
+      ],
+      "preconditions": "A shopper can read an estimated delivery date before paying",
+      "steps": [
+        "The acceptance criterion holds: A dated estimate is visible before the pay button"
+      ],
+      "expected": "the checkout page shows the estimated delivery date",
+      "automation_candidate": false
+    }
+  ]
+}

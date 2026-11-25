@@ -1,0 +1,25 @@
+{
+  "name": "quvantic-skills",
+  "description": "Business skills for proposals, invoices, QA, content, meetings, and talking-head edit plans. Portfolio demo, not client work.",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Mustafa",
+    "url": "https://github.com/mustafaautomation"
+  },
+  "plugins": [
+    {
+      "name": "business-skills",
+      "source": "./plugins/business-skills",
+      "description": "Six skills for freelance and agency workflows: proposals, invoices, QA, content, meetings, and talking-head cuts.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mustafa",
+        "url": "https://github.com/mustafaautomation"
+      },
+      "homepage": "https://skills.quvantic.com",
+      "license": "MIT",
+      "keywords": ["business", "qa", "invoices", "proposals"],
+      "category": "business"
+    }
+  ]
+}

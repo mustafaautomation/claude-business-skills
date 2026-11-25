@@ -1,0 +1,42 @@
+{
+  "title": "talking-head-cut",
+  "fps": 30,
+  "max_pause_ms": 800,
+  "retained_pause_ms": 120,
+  "source_duration_ms": 9000,
+  "program_duration_ms": 7120,
+  "removed": [
+    {
+      "start_ms": 3000,
+      "end_ms": 3800,
+      "reason": "filler",
+      "text": "Um"
+    },
+    {
+      "start_ms": 3120,
+      "end_ms": 5000,
+      "reason": "dead-air",
+      "text": ""
+    }
+  ],
+  "keeps": [
+    {
+      "start_ms": 0,
+      "end_ms": 3120,
+      "program_start_ms": 0,
+      "program_end_ms": 3120,
+      "text": "Hello and welcome."
+    },
+    {
+      "start_ms": 5000,
+      "end_ms": 9000,
+      "program_start_ms": 3120,
+      "program_end_ms": 7120,
+      "text": "Here is the useful part."
+    }
+  ],
+  "chapters": [],
+  "broll": [],
+  "warnings": [],
+  "edl": "TITLE: talking-head-cut\nFCM: NON-DROP FRAME\n\n001  AX       V     C        00:00:00:00 00:00:03:04 00:00:00:00 00:00:03:04\n* FROM CLIP NAME: SOURCE\n002  AX       V     C        00:00:05:00 00:00:09:00 00:00:03:04 00:00:07:04\n* FROM CLIP NAME: SOURCE\n"
+}

@@ -1,0 +1,100 @@
+{
+  "feature": "Checkout",
+  "stories": [
+    {
+      "id": "US-14",
+      "title": "Apply a promo code",
+      "persona": "shopper",
+      "want": "apply one promo code at checkout",
+      "outcome": "the order total shows the discount",
+      "acceptance": [
+        {
+          "id": "AC-1",
+          "text": "A valid unexpired code reduces the order total by the code amount"
+        },
+        {
+          "id": "AC-2",
+          "text": "An expired code is rejected and the total stays unchanged"
+        },
+        {
+          "id": "AC-3",
+          "text": "A second code is rejected while one code is already applied"
+        }
+      ],
+      "risks": {
+        "impact": 5,
+        "likelihood": 4,
+        "areas": ["payment", "pricing"]
+      },
+      "fields": [
+        {
+          "name": "promo_code",
+          "type": "string",
+          "min_length": 4,
+          "max_length": 12,
+          "required": true
+        }
+      ],
+      "states": [
+        {
+          "name": "promo",
+          "initial": "empty",
+          "transitions": [
+            {"from": "empty", "event": "apply_valid", "to": "applied"},
+            {"from": "applied", "event": "apply_second", "to": "applied", "note": "rejected"},
+            {"from": "applied", "event": "remove", "to": "empty"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "US-30",
+      "title": "Free shipping threshold",
+      "persona": "shopper",
+      "want": "see the shipping price the cart actually qualifies for",
+      "outcome": "the shipping line shows the price from the rule",
+      "acceptance": [
+        {
+          "id": "AC-4",
+          "text": "Carts at or above 75.00 in the US show free shipping"
+        }
+      ],
+      "risks": {
+        "impact": 4,
+        "likelihood": 3,
+        "areas": ["pricing"]
+      },
+      "fields": [
+        {
+          "name": "cart_total",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10000
+        }
+      ],
+      "rules": [
+        {"when": {"country": "US", "cart_total": "74.99"}, "then": "standard shipping"},
+        {"when": {"country": "US", "cart_total": "75.00"}, "then": "free shipping"},
+        {"when": {"country": "CA", "cart_total": "75.00"}, "then": "standard shipping"}
+      ]
+    },
+    {
+      "id": "US-3",
+      "title": "Show estimated delivery copy",
+      "persona": "shopper",
+      "want": "read an estimated delivery date before paying",
+      "outcome": "the checkout page shows the estimated delivery date",
+      "acceptance": [
+        {
+          "id": "AC-5",
+          "text": "A dated estimate is visible before the pay button"
+        }
+      ],
+      "risks": {
+        "impact": 2,
+        "likelihood": 2,
+        "areas": ["content"]
+      }
+    }
+  ]
+}

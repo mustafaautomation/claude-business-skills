@@ -1,0 +1,14 @@
+{
+  "name": "business-skills",
+  "displayName": "Business Skills",
+  "version": "1.0.0",
+  "description": "Proposal, invoice, QA, content, meeting, and talking-head edit skills for day-to-day client work. Portfolio demo, not client work.",
+  "author": {
+    "name": "Mustafa",
+    "url": "https://github.com/mustafaautomation"
+  },
+  "homepage": "https://skills.quvantic.com",
+  "repository": "https://github.com/mustafaautomation/claude-business-skills",
+  "license": "MIT",
+  "keywords": ["proposals", "invoices", "qa", "playwright", "content", "meetings", "video-edit"]
+}

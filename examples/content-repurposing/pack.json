@@ -1,0 +1,56 @@
+{
+  "source_title": "One argument, four channels",
+  "linkedin": {
+    "hook": "A transcript is not a content plan. It is one argument buried under every repeated sentence.",
+    "body": "You already did the hard part. You recorded the teardown, the client call, or the talk. The waste starts when that transcript gets pasted into a feed and called a post.\n\nPull one argument out. Say it in a sentence a stranger can repeat. Then give each channel a job instead of a shorter copy of the same blob.\n\nLinkedIn carries the argument, one concrete moment, and a reason to reply. A thread carries the claim in pieces a phone can hold, and it does not open with a number. The newsletter is where the teaching goes, because those people asked for the long version. The short video is one breath: a hook, three beats, words on screen, and a close that names the next step.\n\nIf a draft breaks a length rule, the draft is wrong. Fix it before you hit publish.",
+    "hashtags": ["ContentOps", "Freelance", "Writing", "Video"]
+  },
+  "x_thread": [
+    {"text": "A transcript is not a post. It is one argument buried under every time you repeated yourself."},
+    {"text": "Pull the argument out and say it in a sentence a stranger can use. That sentence is the only part worth distributing."},
+    {"text": "LinkedIn gets the argument, one concrete moment, and a reason to reply. It does not get your career recap."},
+    {"text": "A thread is the same claim in pieces a phone can hold. The first post is the claim. Do not open it with a number."},
+    {"text": "The newsletter is where the teaching lives. Three subject lines, a preview that stands alone, then the sections."},
+    {"text": "The short video is one breath: hook, three beats, on-screen text, and a close. Read the long version if you want the checks I use."}
+  ],
+  "newsletter": {
+    "subject_options": [
+      "Stop pasting the transcript",
+      "One argument, four jobs",
+      "The feed is not the newsletter"
+    ],
+    "preview_text": "Give the long version, the feed, the thread, and the short video different jobs.",
+    "sections": [
+      {
+        "heading": "Find the sentence",
+        "body": "Read the transcript once and write the single claim a stranger could repeat. If you cannot find it, you do not have a post yet. You have notes."
+      },
+      {
+        "heading": "Give each channel a job",
+        "body": "LinkedIn argues. The thread slices the claim. The newsletter teaches. The short video is the hook and the close. Same argument, four shapes, no pasted transcript."
+      }
+    ]
+  },
+  "short_video": {
+    "duration_seconds": 35,
+    "hook": "Stop posting the transcript.",
+    "beats": [
+      {
+        "t": "0-8",
+        "spoken": "Stop posting the transcript. A transcript is one argument buried under every time you said the same thing twice.",
+        "on_screen": "Stop posting the transcript"
+      },
+      {
+        "t": "8-22",
+        "spoken": "Pull that argument into one sentence a stranger can use. LinkedIn gets the argument and one concrete moment. The thread gets the claim in pieces. The newsletter is where you teach.",
+        "on_screen": "One argument. Four jobs."
+      },
+      {
+        "t": "22-35",
+        "spoken": "The short version is this breath. Hook, three beats, words on screen, and a close that tells people what to do next. If the draft is too long, cut the draft.",
+        "on_screen": "Hook. Beats. Close."
+      }
+    ],
+    "cta": "Read the long version before you paste another transcript."
+  }
+}

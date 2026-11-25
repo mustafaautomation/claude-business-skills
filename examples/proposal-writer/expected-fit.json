@@ -1,0 +1,25 @@
+{
+  "fit_score": 30,
+  "band": "decline",
+  "matched_skills": [
+    "playwright",
+    "python"
+  ],
+  "missing_must_haves": [],
+  "red_flags": [
+    "unpaid-sample",
+    "urgent"
+  ],
+  "budget": {
+    "kind": "hourly",
+    "low": 30,
+    "high": 45,
+    "currency": "USD"
+  },
+  "recommended_move": "Ask for a paid pilot. Do not start with an unpaid sample.",
+  "proof_points_allowed": [
+    "Shipped a talking-head edit planner that turns an SRT into a CMX EDL, drops filler-only lines, and tightens dead air.",
+    "Shipped a risk-based test generator that writes Gherkin and Playwright skeletons from acceptance criteria."
+  ],
+  "profile_name": "Mustafa"
+}

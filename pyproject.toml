@@ -1,0 +1,14 @@
+[project]
+name = "claude-business-skills"
+version = "1.0.0"
+description = "Portfolio pack of business skills for proposals, invoices, QA, content, meetings, and talking-head edits."
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["evals"]
+addopts = "-q"
+pythonpath = ["evals", "scripts"]
+
+[tool.ruff]
+line-length = 100
